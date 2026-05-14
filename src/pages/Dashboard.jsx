@@ -1,5 +1,6 @@
 import Dashboardlayout from "../layout/DashboardLayout"
 import Balancecard from "../components/BalanceCard"
+import TransactionList from "../components/TransactionList" 
 
 
 const Dashboard = () => {
@@ -24,8 +25,11 @@ const Dashboard = () => {
           amount = "Ksh 20,000"
           />
 
+      </div>
 
+      <div className="mt-8">
 
+        <TransactionList />
       </div>
 
     </Dashboardlayout> 
