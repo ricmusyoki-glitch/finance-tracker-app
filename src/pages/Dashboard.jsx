@@ -1,8 +1,14 @@
-import React from 'react'
+import Dashboardlayout from "../layout/DashboardLayout"
+
 
 const Dashboard = () => {
+
   return (
-    <h1>Dashboard page</h1>
+    <Dashboardlayout>
+
+        <h1>THIS IS THE DASHBOARD</h1>
+
+    </Dashboardlayout> 
   )
 }
 
