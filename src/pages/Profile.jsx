@@ -1,8 +1,10 @@
-import React from 'react'
+import DashBoardlayout from "../layout/DashboardLayout"
 
 const Profile = () => {
   return (
-    <h1>Profile page</h1>
+    <DashBoardlayout>
+      <h1>This is the profile page</h1>
+    </DashBoardlayout>
   )
 }
 

@@ -1,8 +1,10 @@
-import React from 'react'
+import DashboardLayout from "../layout/DashboardLayout"
 
 const Transactions = () => {
   return (
-    <h1>Transactions</h1>
+    <DashboardLayout>
+      <h1>This is the transactions page</h1>
+    </DashboardLayout>
   )
 }
 

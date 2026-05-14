@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 const Sidebar = () => {
   return (
     <div className="w-64 h-screen bg-gray-900 text-white p-4">
@@ -6,10 +7,21 @@ const Sidebar = () => {
 
         <ul className="space-y-4">
 
-            <li>Dashboard</li>
-            <li>Transactions</li>
-            <li>Profile</li>
-            <li>Logout</li>
+            <li>
+              <Link to="/dashboard" className="hover:bg-gray-700 p-2 rounded-2xl">Dashboard</Link>
+              </li>
+
+            <li>
+              <Link to="/transactions" className="hover:bg-gray-700 p-2 rounded-2xl">Transactions</Link>
+              </li>
+
+            <li>
+              <Link to="/profile" className="hover:bg-gray-700 p-2 rounded-2xl">Profile</Link>
+            </li>
+        
+            <li>
+             <Link to="/logout" className="hover:bg-gray-700 p-2 rounded-2xl">Logout</Link>
+            </li>
 
         </ul>
     </div>
