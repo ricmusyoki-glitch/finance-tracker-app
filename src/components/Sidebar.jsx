@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 const Sidebar = () => {
   return (
-    <div className="w-64 h-screen bg-gray-900 text-white p-4">
+    <div className=" w-40 md:w-64 h-screen bg-gray-900 text-white p-4">
 
-        <h2 className="text-4xl font-bold mb-8">Finance Tracker</h2>
+        <h2 className="text-2xl md:text-4xl font-bold mb-8">Finance Tracker</h2>
 
         <ul className="space-y-4">
 
