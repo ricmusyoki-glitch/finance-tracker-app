@@ -37,6 +37,13 @@ const Dashboard = () => {
     setAmount('') 
   }
 
+  const deleteTransaction = (id) => {
+    const filteredTransaction =
+      transactions.filter((transaction) => transaction.id !== id) 
+  
+    setTransactions(filteredTransaction)
+  } 
+
   const income = transactions
     .filter((transaction) => transaction.amount > 0)
     .reduce(
@@ -82,7 +89,9 @@ const Dashboard = () => {
 
          <div className="w-3/5">
         <TransactionList 
-        transactions={transactions}/>
+        transactions={transactions}
+        deleteTransaction={deleteTransaction}
+/>
         </div>
 
         

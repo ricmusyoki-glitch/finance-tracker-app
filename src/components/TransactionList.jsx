@@ -1,7 +1,7 @@
 import TransactionItem from './TransactionItem'
 
 const TransactionList = ({
-  transactions
+  transactions, deleteTransaction
 }) => {
 
      
@@ -15,7 +15,7 @@ const TransactionList = ({
         key={transaction.id}
         title={transaction.title}
         amount={transaction.amount}
-        />
+        onDelete = {() => deleteTransaction(transaction.id) }/>
 )} 
 
     </div>

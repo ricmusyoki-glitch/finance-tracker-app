@@ -1,4 +1,4 @@
-const TransactionItem = ({title, amount}) => {
+const TransactionItem = ({title, amount, onDelete}) => {
 
   return (
     <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow">
@@ -14,6 +14,10 @@ const TransactionItem = ({title, amount}) => {
                 {amount}
             </p>
         </div>
+
+        <button onClick={onDelete} className="bg-red-500 text-white px-3 py-1 rounded-lg">
+            Delete
+        </button> 
          
     </div>
   )
