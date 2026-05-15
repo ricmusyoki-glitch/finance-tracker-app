@@ -1,11 +1,89 @@
+import { useState } from "react"
 import DashboardLayout from "../layout/DashboardLayout"
+import SearchBar from "../components/SearchBar"
+import TransactionList from "../components/TransactionList"
+import TransactionForm from "../components/TransactionForm"
+import BalanceCard from "../components/BalanceCard"
+import Loader from "../components/Loader"
 
 const Transactions = () => {
+  const [transactions, setTransactions] = useState([
+    { id: 1, title: "Salary", amount: 150000 },
+    { id: 2, title: "Grocery shopping", amount: -5000 },
+    { id: 3, title: "Technical course", amount: -20000 },
+  ])
+  const [search, setSearch] = useState("")
+  const [title, setTitle] = useState("")
+  const [amount, setAmount] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setTimeout(() => {
+      setTransactions([
+        ...transactions,
+        { id: Date.now(), title, amount: Number(amount) },
+      ])
+      setTitle("")
+      setAmount("")
+      setLoading(false)
+    }, 600)
+  }
+
+  const deleteTransaction = (id) =>
+    setTransactions(transactions.filter((t) => t.id !== id))
+
+  const filtered = transactions.filter((t) =>
+    t.title.toLowerCase().includes(search.toLowerCase())
+  )
+
+  const income = transactions
+    .filter((t) => t.amount > 0)
+    .reduce((sum, t) => sum + t.amount, 0)
+
+  const expenses = transactions
+    .filter((t) => t.amount < 0)
+    .reduce((sum, t) => sum + t.amount, 0)
+
   return (
     <DashboardLayout>
-      <h1>This is the transactions page</h1>
+      <div className="p-5">
+        <h1 className="text-2xl font-bold mb-5">Transactions</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <BalanceCard title="Total Income" amount={`Ksh ${income}`} />
+          <BalanceCard title="Total Expenses" amount={`Ksh ${Math.abs(expenses)}`} />
+        </div>
+
+        <div className="flex gap-8">
+          <div className="w-3/5">
+            <SearchBar search={search} setSearch={setSearch} />
+            {loading ? (
+              <Loader />
+            ) : filtered.length > 0 ? (
+              <TransactionList
+                transactions={filtered}
+                deleteTransaction={deleteTransaction}
+              />
+            ) : (
+              <p className="text-gray-500">No transactions found.</p>
+            )}
+          </div>
+
+          <div className="w-2/5">
+            <TransactionForm
+              title={title}
+              setTitle={setTitle}
+              amount={amount}
+              setAmount={setAmount}
+              handleSubmit={handleSubmit}
+            />
+          </div>
+        </div>
+      </div>
     </DashboardLayout>
   )
 }
 
-export default Transactions 
+export default Transactions
