@@ -1,17 +1,16 @@
-import { useState } from "react"; //This gives the component the ability to store changing data
 
 
-const TransactionForm = () => {
 
-    const [Title, setTitle] = useState("") 
-    const [Amount, setAmount] = useState("") 
+const TransactionForm = ({
+    handleSubmit,
+    title,
+    amount,
+    setTitle,
+    setAmount
+}) => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
 
-         console.log(Title)
-         console.log(Amount)
-    }
+
 
   return (
     <form onSubmit={handleSubmit}  className="bg-white p-5 rounded-xl shadow space y-4">
@@ -23,7 +22,7 @@ const TransactionForm = () => {
 
             <input type="text" 
                    placeholder="Title"
-                   value={Title}
+                   value={title}
                    onChange={(e) => setTitle(e.target.value)}
                    className="border p-3 rounded-lg outline-none"/>
         </div>
@@ -34,7 +33,7 @@ const TransactionForm = () => {
 
             <input type="number"
              placeholder="Enter amount" 
-             value={Amount}
+             value={amount}
              onChange={(e) => setAmount(e.target.value)}
              className="border p-3 rounded-lg outline-none"/>
         </div>
