@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom"
 const Sidebar = () => {
   return (
-    <div className=" w-40 md:w-64 h-screen bg-gray-900 text-white p-4">
+    <div className=" w-40 md:w-64 h-screen bg-green-700 text-white p-4">
 
         <h2 className="text-2xl md:text-4xl font-bold mb-8">Finance Tracker</h2>
 
         <ul className="space-y-4">
 
             <li>
-              <Link to="/dashboard" className="hover:bg-gray-700 p-2 rounded-2xl">Dashboard</Link>
+              <Link to="/dashboard" className="hover:bg-green-800 p-2 rounded-2xl">Dashboard</Link>
               </li>
 
             <li>
-              <Link to="/transactions" className="hover:bg-gray-700 p-2 rounded-2xl">Transactions</Link>
+              <Link to="/transactions" className="hover:bg-green-800 p-2 rounded-2xl">Transactions</Link>
               </li>
 
             <li>
-              <Link to="/profile" className="hover:bg-gray-700 p-2 rounded-2xl">Profile</Link>
+              <Link to="/profile" className="hover:bg-green-800 p-2 rounded-2xl">Profile</Link>
             </li>
         
             <li>
-             <Link to="/logout" className="hover:bg-gray-700 p-2 rounded-2xl">Logout</Link>
+             <Link to="/logout" className="hover:bg-green-800 p-2 rounded-2xl">Logout</Link>
             </li>
 
         </ul>

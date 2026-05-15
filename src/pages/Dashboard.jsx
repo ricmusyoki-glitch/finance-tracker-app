@@ -1,6 +1,7 @@
 import Dashboardlayout from "../layout/DashboardLayout"
 import Balancecard from "../components/BalanceCard"
 import TransactionList from "../components/TransactionList" 
+import TransactionForm from "../components/TransactionForm" 
 
 
 const Dashboard = () => {
@@ -27,9 +28,17 @@ const Dashboard = () => {
 
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 flex gap-10">
 
+         <div className="w-3/5">
         <TransactionList />
+        </div>
+
+        
+        <div className="w-2/5">
+        <TransactionForm />
+        </div>
+
       </div>
 
     </Dashboardlayout> 
