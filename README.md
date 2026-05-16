@@ -37,10 +37,14 @@ A personal finance tracking web application built with React and Firebase. Track
 
 
 ## How to use the application
-Log in if you have previously used the application
-Sign up if it is your first time
-Add transaction in the transactions form by inputing the title and the amount
-You can also add an expense transaction and the balance cards will immediately update and reflect
+1. Log in if you have previously used the application
+
+2. Sign up if it is your first time
+
+3. Add transaction in the transactions form by inputing the title and the amount
+
+4. You can also add an expense transaction and the balance cards will immediately update and reflect
+
 
 ## Running Tests
 Run npm test
