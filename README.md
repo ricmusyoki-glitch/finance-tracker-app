@@ -36,23 +36,20 @@ A personal finance tracking web application built with React and Firebase. Track
 
 
 
-## Firebase Setup
-
-1. Go to [Firebase Console](https://console.firebase.google.com)
-2. Create a new project
-3. Enable **Authentication → Email/Password**
-4. Enable **Firestore Database** (start in test mode)
-5. Copy your web app config into `.env`
+## How to use the application
+Log in if you have previously used the application
+Sign up if it is your first time
+Add transaction in the transactions form by inputing the title and the amount
+You can also add an expense transaction and the balance cards will immediately update and reflect
 
 ## Running Tests
 Run npm test
 
 ## Versioning
 
-This project follows [Semantic Versioning](https://semver.org/).
+This project follows semantic versioning
+Current version: v1.0.0
 
-Current version: **v1.0.0**
+## Owner
 
-## License
-
-MIT
+This web application was designed and developed by Ric Musyoki
