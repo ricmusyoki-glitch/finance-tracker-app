@@ -1,18 +1,58 @@
-# React + Vite
+# Finance Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal finance tracking web application built with React and Firebase. Track your income and expenses, view your balance summary, and manage transactions in real time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Email/password authentication via Firebase Auth
+- Add income and expense transactions
+- Delete transactions
+- Real-time balance, income, and expenses summary
+- Search/filter transactions
+- User profile page with financial stats
+- Fully responsive on mobile and desktop
+- Data persisted in Firebase Firestore
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React 19
+- Vite
+- Tailwind CSS
+- Firebase (Auth + Firestore)
+- React Router DOM
+- Vitest + Testing Library
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+
+2. Install dependencies
+
+3. Create a .env file in the root directory and add your Firebase config
+
+4. Start the development server
+
+
+
+## Firebase Setup
+
+1. Go to [Firebase Console](https://console.firebase.google.com)
+2. Create a new project
+3. Enable **Authentication → Email/Password**
+4. Enable **Firestore Database** (start in test mode)
+5. Copy your web app config into `.env`
+
+## Running Tests
+Run npm test
+
+## Versioning
+
+This project follows [Semantic Versioning](https://semver.org/).
+
+Current version: **v1.0.0**
+
+## License
+
+MIT
