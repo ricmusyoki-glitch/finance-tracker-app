@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar'
 describe('SearchBar', () => {
   it('renders the input', () => {
     render(<SearchBar search="" setSearch={() => {}} />)
-    expect(screen.getByPlaceholderText('Search transactions')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Search transactions...')).toBeInTheDocument()
   })
 
   it('displays the current search value', () => {
@@ -16,7 +16,7 @@ describe('SearchBar', () => {
   it('calls setSearch on input change', () => {
     const setSearch = vi.fn()
     render(<SearchBar search="" setSearch={setSearch} />)
-    fireEvent.change(screen.getByPlaceholderText('Search transactions'), {
+    fireEvent.change(screen.getByPlaceholderText('Search transactions...'), {
       target: { value: 'Rent' },
     })
     expect(setSearch).toHaveBeenCalledWith('Rent')
