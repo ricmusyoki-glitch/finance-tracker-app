@@ -4,6 +4,7 @@ const Navbar = ({ onMenuClick }) => {
       <button
         onClick={onMenuClick}
         className="md:hidden text-green-700 text-2xl font-bold focus:outline-none"
+        aria-label="Open menu"
       >
         ☰
       </button>
