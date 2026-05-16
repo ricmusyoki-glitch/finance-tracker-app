@@ -19,7 +19,7 @@ const Profile = () => {
         <h1 className="text-2xl font-bold mb-5">Profile</h1>
 
         <div className="bg-white p-6 rounded-xl shadow mb-6 flex items-center gap-4">
-          <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white text-2xl font-bold">
+          <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white text-2xl font-bold shrink-0">
             {user?.email?.charAt(0).toUpperCase() ?? "U"}
           </div>
           <div>
