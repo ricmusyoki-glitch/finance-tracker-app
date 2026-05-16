@@ -4,35 +4,22 @@ import SearchBar from "../components/SearchBar"
 import TransactionList from "../components/TransactionList"
 import TransactionForm from "../components/TransactionForm"
 import BalanceCard from "../components/BalanceCard"
-import Loader from "../components/Loader"
+import useFinance from "../context/useFinance"
 
 const Transactions = () => {
-  const [transactions, setTransactions] = useState([
-    { id: 1, title: "Salary", amount: 150000 },
-    { id: 2, title: "Grocery shopping", amount: -5000 },
-    { id: 3, title: "Technical course", amount: -20000 },
-  ])
+  const { transactions, handleAdd, handleDelete } = useFinance()
   const [search, setSearch] = useState("")
   const [title, setTitle] = useState("")
   const [amount, setAmount] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [type, setType] = useState("income")
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setLoading(true)
-    setTimeout(() => {
-      setTransactions([
-        ...transactions,
-        { id: Date.now(), title, amount: Number(amount) },
-      ])
-      setTitle("")
-      setAmount("")
-      setLoading(false)
-    }, 600)
+    const signed = type === "expense" ? -Math.abs(Number(amount)) : Math.abs(Number(amount))
+    handleAdd({ title, amount: signed })
+    setTitle("")
+    setAmount("")
   }
-
-  const deleteTransaction = (id) =>
-    setTransactions(transactions.filter((t) => t.id !== id))
 
   const filtered = transactions.filter((t) =>
     t.title.toLowerCase().includes(search.toLowerCase())
@@ -56,27 +43,23 @@ const Transactions = () => {
           <BalanceCard title="Total Expenses" amount={`Ksh ${Math.abs(expenses)}`} />
         </div>
 
-        <div className="flex gap-8">
-          <div className="w-3/5">
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="w-full md:w-3/5">
             <SearchBar search={search} setSearch={setSearch} />
-            {loading ? (
-              <Loader />
-            ) : filtered.length > 0 ? (
-              <TransactionList
-                transactions={filtered}
-                deleteTransaction={deleteTransaction}
-              />
+            {filtered.length > 0 ? (
+              <TransactionList transactions={filtered} deleteTransaction={handleDelete} />
             ) : (
               <p className="text-gray-500">No transactions found.</p>
             )}
           </div>
-
-          <div className="w-2/5">
+          <div className="w-full md:w-2/5">
             <TransactionForm
               title={title}
               setTitle={setTitle}
               amount={amount}
               setAmount={setAmount}
+              type={type}
+              setType={setType}
               handleSubmit={handleSubmit}
             />
           </div>
