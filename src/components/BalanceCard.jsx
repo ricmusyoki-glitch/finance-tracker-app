@@ -7,7 +7,7 @@ const BalanceCard = ({title, amount}) => {
             {title}
         </h2>
 
-        <p className="text-3xl font-bold mt-2">
+        <p className="text-3xl font-bold mt-2 text-green-700">
             {amount}
         </p>
 
